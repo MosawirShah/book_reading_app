@@ -12,7 +12,7 @@ class BookReadingApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/' : (context) => SplashView(),
-        '/home_view' : (context) => const HomeView(),
+        HomeView.routeName : (context) => HomeView(),
       },
       theme: ThemeData(
         appBarTheme: const AppBarTheme(

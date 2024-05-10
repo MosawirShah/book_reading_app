@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:book_reading_app/constants/color_constant.dart';
 import 'package:book_reading_app/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -20,7 +21,7 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     getUserData();
     Future.delayed(const Duration(seconds: 3),(){
-      Navigator.of(context).pushReplacementNamed('/home_view',arguments: HomeArguments(
+      Navigator.of(context).pushReplacementNamed(HomeView.routeName,arguments: HomeArguments(
         user: user
       ));
     });
@@ -36,7 +37,7 @@ class _SplashViewState extends State<SplashView> {
     if(data != null){
       var structuredData = jsonDecode(data!)["users"]["123456"];
       user = User.fromJson(structuredData);
-      print(structuredData);
+      //print(structuredData);
     }
 
   }
@@ -48,8 +49,8 @@ class _SplashViewState extends State<SplashView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const FaIcon(FontAwesomeIcons.bookReader,
-              color: Color(0xFFEABCB1),
+           FaIcon(FontAwesomeIcons.bookReader,
+              color: kSplashColor,
               size: 150,
             ),
             const SizedBox(height: 15,),
