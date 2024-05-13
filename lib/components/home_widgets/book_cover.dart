@@ -33,7 +33,7 @@ class BookCover extends StatelessWidget {
         ),
         SizedBox(
           height: screenHeight(context) * 0.07,
-          child: BottomContainer()
+          child: BottomContainer(book:book)
         ),
       ],
     );

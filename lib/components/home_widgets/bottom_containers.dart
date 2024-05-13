@@ -1,7 +1,11 @@
+import 'package:book_reading_app/model/user.dart';
+import 'package:book_reading_app/views/book_view.dart';
 import 'package:flutter/material.dart';
 
 class BottomContainer extends StatefulWidget {
-  const BottomContainer({Key? key}) : super(key: key);
+ BottomContainer({Key? key, this.book}) : super(key: key);
+
+  Book? book;
 
   @override
   State<BottomContainer> createState() => _BottomContainerState();
@@ -24,7 +28,12 @@ class _BottomContainerState extends State<BottomContainer> {
 
               )
             ),
-            child: Center(child: Text("Read",style: TextStyle(color: Colors.white),)),
+            child: Center(child: GestureDetector(
+              ///TODO: BOTTOM CONTAINER
+              onTap: (){
+                Navigator.of(context).pushNamed(BookView.routeName, arguments: BookArgument(book: widget.book!));
+              },
+                child: const Text("Read",style: TextStyle(color: Colors.white),))),
           ),
         ),
       ],

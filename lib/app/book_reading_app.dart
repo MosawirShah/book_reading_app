@@ -1,3 +1,4 @@
+import 'package:book_reading_app/views/book_view.dart';
 import 'package:book_reading_app/views/home_view.dart';
 import 'package:book_reading_app/views/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ class BookReadingApp extends StatelessWidget {
       routes: {
         '/' : (context) => SplashView(),
         HomeView.routeName : (context) => HomeView(),
+        BookView.routeName : (context) => BookView(),
       },
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
